@@ -115,35 +115,35 @@
     <h1>KNG расчёт тяг</h1>
     <form id="calcForm">
       <div class="field">
-        <span class="field-title">Ширина створки (мм):</span>
-        <input type="number" id="width" placeholder="например 800" required />
+        <label class="field-title" for="width">Ширина створки (мм):</label>
+        <input type="number" id="width" placeholder="например 800" required>
       </div>
       <div class="field">
-        <span class="field-title">Высота створки (мм):</span>
-        <input type="number" id="height" placeholder="например 2100" required />
+        <label class="field-title" for="height">Высота створки (мм):</label>
+        <input type="number" id="height" placeholder="например 2100" required>
       </div>
       <div class="field">
-        <span class="field-title">L1 (мм):</span>
-        <input type="number" id="L1" />
+        <label class="field-title" for="L1">L1 (мм):</label>
+        <input type="number" id="L1">
       </div>
       <div class="field">
-        <span class="field-title">L2 (мм):</span>
-        <input type="number" id="L2" />
+        <label class="field-title" for="L2">L2 (мм):</label>
+        <input type="number" id="L2">
       </div>
       <div class="field">
-        <span class="field-title">L3 (мм):</span>
-        <input type="number" id="L3" />
+        <label class="field-title" for="L3">L3 (мм):</label>
+        <input type="number" id="L3">
       </div>
       <div class="field">
-        <span class="field-title">L4 (мм):</span>
-        <input type="number" id="L4" />
+        <label class="field-title" for="L4">L4 (мм):</label>
+        <input type="number" id="L4">
       </div>
       <div class="field">
-        <span class="field-title">L5 (мм):</span>
-        <input type="number" id="L5" />
+        <label class="field-title" for="L5">L5 (мм):</label>
+        <input type="number" id="L5">
       </div>
       <div class="field">
-        <span class="field-title">Серия ручки:</span>
+        <label class="field-title" for="series">Серия ручки:</label>
         <select id="series">
           <option value="standard_design">Стандарт / Дизайн</option>
           <option value="premium_mini_disc">Premium / Minimalist / Discovery</option>
@@ -151,7 +151,7 @@
         </select>
       </div>
       <div class="field">
-        <span class="field-title">Тип петель:</span>
+        <label class="field-title" for="hinge">Тип петель:</label>
         <select id="hinge">
           <option value="visible_100">Стандартные петли (видимые) 100кг</option>
           <option value="hidden_100_90">Скрытые петли 100 кг 90°</option>
@@ -160,9 +160,9 @@
       </div>
       <button type="submit">Рассчитать</button>
     </form>
-    <div id="errors"></div>
     <div id="hints"></div>
-    <pre id="result"></pre>
+    <div id="errors"></div>
+    <div id="result"></div>
   </div>
   <script src="app.js"></script>
   <script>
@@ -173,4 +173,3 @@
   </script>
 </body>
 </html>
-
