@@ -184,4 +184,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     if (lines.length === 0) lines.push('Нет рассчитанных тяг — введите хотя бы одно значение L1–L5.');
-    resultEl.textContent = lines.join('\n
+    resultEl.textContent = lines.join('\n');
+  });
+});
