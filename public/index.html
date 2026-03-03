@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>KNG расчёт тяг</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <h1>KNG расчёт тяг</h1>
+
+  <form id="calcForm">
+    <div>
+      <label>
+        Ширина створки (мм):
+        <input type="number" id="width" required />
+      </label>
+    </div>
+    <div>
+      <label>
+        Высота створки (мм):
+        <input type="number" id="height" required />
+      </label>
+    </div>
+    <div>
+      <label>
+        L1 (мм):
+        <input type="number" id="L1" />
+      </label>
+    </div>
+    <div>
+      <label>
+        L2 (мм):
+        <input type="number" id="L2" />
+      </label>
+    </div>
+    <div>
+      <label>
+        L3 (мм):
+        <input type="number" id="L3" />
+      </label>
+    </div>
+    <div>
+      <label>
+        L4 (мм):
+        <input type="number" id="L4" />
+      </label>
+    </div>
+    <div>
+      <label>
+        L5 (мм):
+        <input type="number" id="L5" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Серия ручки:
+        <select id="series">
+          <option value="standard_design">Стандарт / Дизайн</option>
+          <option value="premium_mini_disc">Premium / Minimalist / Discovery</option>
+          <option value="handle_4square">Ручки под 4-х гран ред-р</option>
+        </select>
+      </label>
+    </div>
+    <div>
+      <label>
+        Тип петель:
+        <select id="hinge">
+          <option value="visible_100">Стандартные петли (видимые) 100кг</option>
+          <option value="hidden_100_90">Скрытые петли 100 кг 90°</option>
+          <option value="first_tilt_160_180">Скрытые First Tilt 160 кг 180°</option>
+        </select>
+      </label>
+    </div>
+    <button type="submit">Рассчитать</button>
+  </form>
+
+  <pre id="result"></pre>
+
+  <script src="app.js"></script>
+</body>
+</html>
