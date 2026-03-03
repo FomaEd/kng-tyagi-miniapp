@@ -11,7 +11,6 @@
       margin: 0;
       padding: 0;
     }
-
     body {
       min-height: 100vh;
       background-image: url('https://fomaed.github.io/kng-tyagi-miniapp/public/bg.jpg');
@@ -22,7 +21,6 @@
       font-size: 18px;
       color: #ffffff;
     }
-
     body::before {
       content: '';
       position: fixed;
@@ -31,7 +29,6 @@
       background: rgba(0, 0, 0, 0.65);
       z-index: 0;
     }
-
     .container {
       position: relative;
       z-index: 1;
@@ -39,7 +36,6 @@
       max-width: 600px;
       margin: 0 auto;
     }
-
     h1 {
       font-size: 28px;
       font-weight: bold;
@@ -47,19 +43,16 @@
       color: #ffffff;
       text-align: center;
     }
-
     .field {
       margin-bottom: 16px;
     }
-
-    .field label {
+    .field-title {
       display: block;
       margin-bottom: 6px;
       font-size: 18px;
       font-weight: 600;
       color: #ffffff;
     }
-
     input[type="number"],
     select {
       width: 100%;
@@ -71,16 +64,13 @@
       color: #ffffff;
       outline: none;
     }
-
     input[type="number"]::placeholder {
       color: rgba(255,255,255,0.5);
     }
-
     select option {
       background: #1a1a2e;
       color: #ffffff;
     }
-
     button[type="submit"] {
       width: 100%;
       padding: 14px;
@@ -93,25 +83,21 @@
       border-radius: 10px;
       cursor: pointer;
     }
-
     button[type="submit"]:active {
       background: #25a88c;
     }
-
     #hints {
       margin-top: 20px;
       font-size: 16px;
       color: rgba(255,255,255,0.75);
       line-height: 1.6;
     }
-
     #errors {
       margin-top: 10px;
       font-size: 16px;
       color: #ff6b6b;
       font-weight: 600;
     }
-
     #result {
       margin-top: 20px;
       font-size: 18px;
@@ -127,38 +113,37 @@
 <body>
   <div class="container">
     <h1>KNG расчёт тяг</h1>
-
     <form id="calcForm">
       <div class="field">
-        abel for="width">Ширина створки (мм):</label>
+        <span class="field-title">Ширина створки (мм):</span>
         <input type="number" id="width" placeholder="например 800" required />
       </div>
       <div class="field">
-        abel for="height">Высота створки (мм):</label>
+        <span class="field-title">Высота створки (мм):</span>
         <input type="number" id="height" placeholder="например 2100" required />
       </div>
       <div class="field">
-        abel for="L1">L1 (мм):</label>
+        <span class="field-title">L1 (мм):</span>
         <input type="number" id="L1" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel for="L2">L2 (мм):</label>
+        <span class="field-title">L2 (мм):</span>
         <input type="number" id="L2" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel for="L3">L3 (мм):</label>
+        <span class="field-title">L3 (мм):</span>
         <input type="number" id="L3" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel for="L4">L4 (мм):</label>
+        <span class="field-title">L4 (мм):</span>
         <input type="number" id="L4" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel for="L5">L5 (мм):</label>
+        <span class="field-title">L5 (мм):</span>
         <input type="number" id="L5" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel for="series">Серия ручки:</label>
+        <span class="field-title">Серия ручки:</span>
         <select id="series">
           <option value="standard_design">Стандарт / Дизайн</option>
           <option value="premium_mini_disc">Premium / Minimalist / Discovery</option>
@@ -166,7 +151,7 @@
         </select>
       </div>
       <div class="field">
-        abel for="hinge">Тип петель:</label>
+        <span class="field-title">Тип петель:</span>
         <select id="hinge">
           <option value="visible_100">Стандартные петли (видимые) 100кг</option>
           <option value="hidden_100_90">Скрытые петли 100 кг 90°</option>
@@ -175,12 +160,10 @@
       </div>
       <button type="submit">Рассчитать</button>
     </form>
-
     <div id="errors"></div>
     <div id="hints"></div>
     <pre id="result"></pre>
   </div>
-
   <script src="app.js"></script>
   <script>
     if (window.Telegram && window.Telegram.WebApp) {
