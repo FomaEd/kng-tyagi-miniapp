@@ -14,7 +14,7 @@
 
     body {
       min-height: 100vh;
-      background-image: url('bg.jpg');
+      background-image: url('https://fomaed.github.io/kng-tyagi-miniapp/public/bg.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -23,7 +23,6 @@
       color: #ffffff;
     }
 
-    /* Затемнение поверх фото */
     body::before {
       content: '';
       position: fixed;
@@ -53,7 +52,7 @@
       margin-bottom: 16px;
     }
 
-    label {
+    .field label {
       display: block;
       margin-bottom: 6px;
       font-size: 18px;
@@ -131,35 +130,35 @@
 
     <form id="calcForm">
       <div class="field">
-        abel>Ширина створки (мм):</label>
+        abel for="width">Ширина створки (мм):</label>
         <input type="number" id="width" placeholder="например 800" required />
       </div>
       <div class="field">
-        abel>Высота створки (мм):</label>
+        abel for="height">Высота створки (мм):</label>
         <input type="number" id="height" placeholder="например 2100" required />
       </div>
       <div class="field">
-        abel>L1 (мм):</label>
+        abel for="L1">L1 (мм):</label>
         <input type="number" id="L1" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel>L2 (мм):</label>
+        abel for="L2">L2 (мм):</label>
         <input type="number" id="L2" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel>L3 (мм):</label>
+        abel for="L3">L3 (мм):</label>
         <input type="number" id="L3" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel>L4 (мм):</label>
+        abel for="L4">L4 (мм):</label>
         <input type="number" id="L4" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel>L5 (мм):</label>
+        abel for="L5">L5 (мм):</label>
         <input type="number" id="L5" placeholder="необязательно" />
       </div>
       <div class="field">
-        abel>Серия ручки:</label>
+        abel for="series">Серия ручки:</label>
         <select id="series">
           <option value="standard_design">Стандарт / Дизайн</option>
           <option value="premium_mini_disc">Premium / Minimalist / Discovery</option>
@@ -167,7 +166,7 @@
         </select>
       </div>
       <div class="field">
-        abel>Тип петель:</label>
+        abel for="hinge">Тип петель:</label>
         <select id="hinge">
           <option value="visible_100">Стандартные петли (видимые) 100кг</option>
           <option value="hidden_100_90">Скрытые петли 100 кг 90°</option>
