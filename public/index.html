@@ -4,78 +4,190 @@
   <meta charset="UTF-8" />
   <title>KNG расчёт тяг</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    /* Затемнение поверх фото */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 24px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 24px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      outline: none;
+    }
+
+    input[type="number"]::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+
+    select option {
+      background: #1a1a2e;
+      color: #ffffff;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      background: #2ec4a5;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:active {
+      background: #25a88c;
+    }
+
+    #hints {
+      margin-top: 20px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+    }
+
+    #errors {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ff6b6b;
+      font-weight: 600;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffffff;
+      white-space: pre-wrap;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px;
+      line-height: 1.8;
+    }
+  </style>
 </head>
 <body>
-  <h1>KNG расчёт тяг</h1>
+  <div class="container">
+    <h1>KNG расчёт тяг</h1>
 
-  <form id="calcForm">
-    <div>
-      <label>
-        Ширина створки (мм):
-        <input type="number" id="width" required />
-      </label>
-    </div>
-    <div>
-      <label>
-        Высота створки (мм):
-        <input type="number" id="height" required />
-      </label>
-    </div>
-    <div>
-      <label>
-        L1 (мм):
-        <input type="number" id="L1" />
-      </label>
-    </div>
-    <div>
-      <label>
-        L2 (мм):
-        <input type="number" id="L2" />
-      </label>
-    </div>
-    <div>
-      <label>
-        L3 (мм):
-        <input type="number" id="L3" />
-      </label>
-    </div>
-    <div>
-      <label>
-        L4 (мм):
-        <input type="number" id="L4" />
-      </label>
-    </div>
-    <div>
-      <label>
-        L5 (мм):
-        <input type="number" id="L5" />
-      </label>
-    </div>
-    <div>
-      <label>
-        Серия ручки:
+    <form id="calcForm">
+      <div class="field">
+        abel>Ширина створки (мм):</label>
+        <input type="number" id="width" placeholder="например 800" required />
+      </div>
+      <div class="field">
+        abel>Высота створки (мм):</label>
+        <input type="number" id="height" placeholder="например 2100" required />
+      </div>
+      <div class="field">
+        abel>L1 (мм):</label>
+        <input type="number" id="L1" placeholder="необязательно" />
+      </div>
+      <div class="field">
+        abel>L2 (мм):</label>
+        <input type="number" id="L2" placeholder="необязательно" />
+      </div>
+      <div class="field">
+        abel>L3 (мм):</label>
+        <input type="number" id="L3" placeholder="необязательно" />
+      </div>
+      <div class="field">
+        abel>L4 (мм):</label>
+        <input type="number" id="L4" placeholder="необязательно" />
+      </div>
+      <div class="field">
+        abel>L5 (мм):</label>
+        <input type="number" id="L5" placeholder="необязательно" />
+      </div>
+      <div class="field">
+        abel>Серия ручки:</label>
         <select id="series">
           <option value="standard_design">Стандарт / Дизайн</option>
           <option value="premium_mini_disc">Premium / Minimalist / Discovery</option>
           <option value="handle_4square">Ручки под 4-х гран ред-р</option>
         </select>
-      </label>
-    </div>
-    <div>
-      <label>
-        Тип петель:
+      </div>
+      <div class="field">
+        abel>Тип петель:</label>
         <select id="hinge">
           <option value="visible_100">Стандартные петли (видимые) 100кг</option>
           <option value="hidden_100_90">Скрытые петли 100 кг 90°</option>
           <option value="first_tilt_160_180">Скрытые First Tilt 160 кг 180°</option>
         </select>
-      </label>
-    </div>
-    <button type="submit">Рассчитать</button>
-  </form>
+      </div>
+      <button type="submit">Рассчитать</button>
+    </form>
 
-  <pre id="result"></pre>
+    <div id="errors"></div>
+    <div id="hints"></div>
+    <pre id="result"></pre>
+  </div>
 
   <script src="app.js"></script>
+  <script>
+    if (window.Telegram && window.Telegram.WebApp) {
+      Telegram.WebApp.ready();
+      Telegram.WebApp.expand();
+    }
+  </script>
 </body>
 </html>
