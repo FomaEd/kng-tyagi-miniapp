@@ -166,7 +166,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     function addLine(label, val) {
       if (typeof val === 'number') {
-        lines.push(label + ': ' +  + val + ' мм');
+        lines.push(label + ':  + +  + val + ' мм');
       }
     }
 
