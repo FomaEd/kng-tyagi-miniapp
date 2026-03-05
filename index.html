@@ -166,7 +166,8 @@
   </div>
     <script>
     if (window.Telegram && window.Telegram.WebApp) {
-      Telegr    <script>
+    Telegram.WebApp.ready();
+          Telegram.WebApp.expand();
       // Загрузка app.js с версией для предотвращения кеширования
       var script = document.createElement('script');
       script.src = 'app.js?v=' + new Date().getTime();
