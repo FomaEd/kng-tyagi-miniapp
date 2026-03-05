@@ -168,12 +168,8 @@
     if (window.Telegram && window.Telegram.WebApp) {
     Telegram.WebApp.ready();
           Telegram.WebApp.expand();
-      // Загрузка app.js с версией для предотвращения кеширования
-      var script = document.createElement('script');
-      script.src = 'app.js?v=' + new Date().getTime();
-      document.body.appendChild(script);
-    </script>
     }
   </script>
+          <script src="app.js">></script>
 </body>
 </html>
