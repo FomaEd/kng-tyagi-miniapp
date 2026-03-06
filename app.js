@@ -60,9 +60,9 @@ function calculateTraction(input) {
     var r = range === '390_700' ? '390_700' : '700_1200';
     var base = STD_VIS[r];
     L1o = base.L1; L2o = base.L2; L3o = base.L3; L4o = base.L4; L5o = base.L5;
-    if (series === 'premium_mini_disc') { L1o = PREM_VIS[r].L1; L2o = PREM_VIS[r].L2; notePrefix = 'Premium/Minimalist/Discovery, стандартные петли 100 кг, ширина '; }
-    else if (series === 'handle_4square') { L1o = SQ_VIS[r].L1; L2o = SQ_VIS[r].L2; notePrefix = 'Ручки под 4-х гран ред-р, стандартные петли 100 кг, ширина '; }
-    else { notePrefix = 'Стандарт/Дизайн, стандартные петли 100 кг, ширина '; }
+    if (series === 'premium_mini_disc') { L1o = PREM_VIS[r].L1; L2o = PREM_VIS[r].L2; notePrefix = 'Редуктор с TORX штифтом, стандартные петли 100 кг, ширина '; }
+    else if (series === 'handle_4square') { L1o = SQ_VIS[r].L1; L2o = SQ_VIS[r].L2; notePrefix = 'Редуктор под 4-гран штифт, стандартные петли 100 кг, ширина '; }
+    else { notePrefix = 'Переходник (вилка) под ручку, стандартные петли 100 кг, ширина '; }
     notePrefix += range === '390_700' ? '390–700 мм' : range === '700_1200' ? '700–1200 мм' : '1200–1600 мм';
     usedMode = highSash ? 'Высота створки ≥ 2400 мм' : 'Обычная высота створки';
 
@@ -71,9 +71,9 @@ function calculateTraction(input) {
     var base = STD_HID[r];
     L1o = base.L1; L2o = base.L2; L3o = base.L3; L4o = base.L4; L5o = base.L5;
     if (highSash) L4o = 800;
-    if (series === 'premium_mini_disc') { L1o = PREM_HID[r].L1; L2o = PREM_HID[r].L2; notePrefix = 'Premium/Minimalist/Discovery, скрытые петли 100 кг 90°, ширина '; }
-    else if (series === 'handle_4square') { L1o = SQ_HID[r].L1; L2o = SQ_HID[r].L2; notePrefix = 'Ручки под 4-х гран ред-р, скрытые петли 100 кг 90°, ширина '; }
-    else { notePrefix = 'Стандарт/Дизайн, скрытые петли 100 кг 90°, ширина '; }
+    if (series === 'premium_mini_disc') { L1o = PREM_HID[r].L1; L2o = PREM_HID[r].L2; notePrefix = 'Редуктор с TORX штифтом, скрытые петли 100 кг 90°, ширина '; }
+    else if (series === 'handle_4square') { L1o = SQ_HID[r].L1; L2o = SQ_HID[r].L2; notePrefix = 'Редуктор под 4-гран штифт, скрытые петли 100 кг 90°, ширина '; }
+    else { notePrefix = 'Переходник (вилка) под ручку, скрытые петли 100 кг 90°, ширина '; }
     notePrefix += range === '390_700' ? '390–700 мм' : range === '700_1200' ? '700–1200 мм' : '1200–1600 мм';
     usedMode = highSash ? 'Высота створки ≥ 2400 мм (используется L4*)' : 'Обычная высота створки';
 
@@ -85,8 +85,8 @@ function calculateTraction(input) {
     var base = STD_FT[ftRange];
     L1o = base.L1; L2o = base.L2; L3o = base.L3; L4o = base.L4; L5o = base.L5;
     if (highSash) L4o = 800;
-    if (series === 'premium_mini_disc') { L1o = PREM_FT[ftRange].L1; L2o = PREM_FT[ftRange].L2; notePrefix = 'Premium/Minimalist/Discovery, First Tilt 160 кг 180°, ширина '; }
-    else if (series === 'handle_4square') { L1o = SQ_FT[ftRange].L1; L2o = SQ_FT[ftRange].L2; notePrefix = 'Ручки под 4-х гран ред-р, First Tilt 160 кг 180°, ширина '; }
+    if (series === 'premium_mini_disc') { L1o = PREM_FT[ftRange].L1; L2o = PREM_FT[ftRange].L2; notePrefix = 'Редуктор с TORX штифтом, First Tilt 160 кг 180°, ширина '; }
+    else if (series === 'handle_4square') { L1o = SQ_FT[ftRange].L1; L2o = SQ_FT[ftRange].L2; notePrefix = 'Редуктор под 4-гран штифт, First Tilt 160 кг 180°, ширина '; }
     else { notePrefix = 'Скрытые петли First Tilt 160 кг 180°, ширина '; }
     notePrefix += width <= 700 ? '445–700 мм' : width <= 1200 ? '700–1200 мм' : '1200–1600 мм';
     usedMode = highSash ? 'Высота створки ≥ 2400 мм (используется L4*)' : 'Обычная высота створки';
